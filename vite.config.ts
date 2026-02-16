@@ -5,9 +5,6 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // GitHub Pages base path - matches your repository name
-  base: '/pixel-perfect-replication/',
-  
   server: {
     host: "::",
     port: 8080,
