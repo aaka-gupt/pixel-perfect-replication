@@ -1,57 +1,60 @@
 import { Wrench } from "lucide-react";
-
-const skillCategories = [
-  {
-    title: "CAD & Technical Planning",
-    skills: [
-      { name: "AutoCAD", level: "3+ years" },
-      { name: "Revit (BIM)", level: "Basic" },
-      { name: "Civil 3D", level: "Basic" },
-      { name: "CATIA V5", level: "Basic" },
-    ],
-  },
-  {
-    title: "GIS & Spatial Analysis",
-    skills: [
-      { name: "ArcGIS", level: "Intermediate" },
-      { name: "QGIS", level: "Basic" },
-      { name: "Spatial Analysis", level: "Applied" },
-    ],
-  },
-  {
-    title: "Simulation & Modeling",
-    skills: [
-      { name: "ANSYS Workbench", level: "FEM" },
-      { name: "QForm", level: "Flow" },
-      { name: "Hydraulic Calculations", level: "Professional" },
-    ],
-  },
-  {
-    title: "Water Engineering",
-    skills: [
-      { name: "Groundwater Remediation", level: "" },
-      { name: "Urban Drainage", level: "" },
-      { name: "Wastewater Technology", level: "" },
-      { name: "Flood Protection", level: "" },
-    ],
-  },
-  {
-    title: "Languages",
-    skills: [
-      { name: "German", level: "B2 (C1 in prep)" },
-      { name: "English", level: "Fluent" },
-      { name: "Hindi", level: "Native" },
-    ],
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const SkillsSection = () => {
+  const { t } = useLanguage();
+
+  const skillCategories = [
+    {
+      title: t("skills.cat.cad"),
+      skills: [
+        { name: "AutoCAD", level: "3+ years" },
+        { name: "Revit (BIM)", level: t("skills.level.basic") },
+        { name: "Civil 3D", level: t("skills.level.basic") },
+        { name: "CATIA V5", level: t("skills.level.basic") },
+      ],
+    },
+    {
+      title: t("skills.cat.gis"),
+      skills: [
+        { name: "ArcGIS", level: t("skills.level.intermediate") },
+        { name: "QGIS", level: t("skills.level.basic") },
+        { name: "Spatial Analysis", level: "Applied" },
+      ],
+    },
+    {
+      title: t("skills.cat.sim"),
+      skills: [
+        { name: "ANSYS Workbench", level: "FEM" },
+        { name: "QForm", level: "Flow" },
+        { name: "Hydraulic Calculations", level: t("skills.level.professional") },
+      ],
+    },
+    {
+      title: t("skills.cat.water"),
+      skills: [
+        { name: t("skills.water.0"), level: "" },
+        { name: t("skills.water.1"), level: "" },
+        { name: t("skills.water.2"), level: "" },
+        { name: t("skills.water.3"), level: "" },
+      ],
+    },
+    {
+      title: t("skills.cat.lang"),
+      skills: [
+        { name: t("skills.lang.german"), level: "B2 (C1 in prep)" },
+        { name: t("skills.lang.english"), level: t("skills.level.fluent") },
+        { name: t("skills.lang.hindi"), level: t("skills.level.native") },
+      ],
+    },
+  ];
+
   return (
     <section id="skills" className="py-20 px-6 section-alt">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 flex items-center gap-3">
           <Wrench className="w-8 h-8 text-accent" />
-          Skills & Expertise
+          {t("skills.title")}
         </h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

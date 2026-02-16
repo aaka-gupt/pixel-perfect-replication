@@ -1,14 +1,17 @@
 import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ContactSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="contact" className="py-20 px-6">
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-          Get in Touch
+          {t("contact.title")}
         </h2>
         <p className="text-muted-foreground mb-10">
-          Available immediately for working student positions and full-time roles from October 2026.
+          {t("contact.subtitle")}
         </p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -46,13 +49,13 @@ const ContactSection = () => {
           </a>
           <div className="flex items-center gap-3 bg-card rounded-lg p-5 card-elevated justify-center text-sm">
             <MapPin className="w-5 h-5 text-accent" />
-            <span className="text-foreground">Stuttgart, Germany</span>
+            <span className="text-foreground">{t("hero.location")}</span>
           </div>
         </div>
       </div>
 
       <div className="text-center mt-16 text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Aakash Gupta. All rights reserved.
+        © {new Date().getFullYear()} Aakash Gupta. {t("contact.rights")}
       </div>
     </section>
   );

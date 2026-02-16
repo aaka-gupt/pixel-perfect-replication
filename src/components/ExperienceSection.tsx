@@ -1,50 +1,39 @@
 import { Briefcase } from "lucide-react";
-
-const experiences = [
-  {
-    title: "Student Research Assistant – VEGAS",
-    subtitle: "Groundwater & Contaminated Site Remediation",
-    company: "University of Stuttgart",
-    period: "Apr 2023 – Present",
-    points: [
-      "Hydraulic design and dimensioning of groundwater wells",
-      "CAD layouts, apparatus drawings, and P&IDs for groundwater remediation (AutoCAD)",
-      "Hydraulic calculations and technical design of groundwater lowering systems",
-      "Contribution to tender documents and planning documentation",
-    ],
-  },
-  {
-    title: "Student Research Assistant – IFU",
-    subtitle: "Institute for Metal Forming Technology",
-    company: "University of Stuttgart",
-    period: "Oct 2023 – Apr 2024",
-    points: [
-      "FEM simulations for complex forming processes (ANSYS Workbench, QForm)",
-      "CAD-based tool designs using CATIA V5 and Spaceclaim",
-      "Modeling and simulation of flow behavior in hybrid systems",
-    ],
-  },
-  {
-    title: "Junior Production Engineer",
-    subtitle: "Design & Production",
-    company: "Calsys India Pvt. Ltd.",
-    period: "Jun 2018 – Nov 2020",
-    points: [
-      "Design and drafting of calender system components (AutoCAD)",
-      "Reduced design-to-manufacturing time by 25%",
-      "Improved project efficiency by 20%",
-      "Cross-functional team coordination between design, manufacturing, and QA",
-    ],
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ExperienceSection = () => {
+  const { t } = useLanguage();
+
+  const experiences = [
+    {
+      title: t("exp.0.title"),
+      subtitle: t("exp.0.subtitle"),
+      company: t("exp.0.company"),
+      period: t("exp.0.period"),
+      points: [t("exp.0.p0"), t("exp.0.p1"), t("exp.0.p2"), t("exp.0.p3")],
+    },
+    {
+      title: t("exp.1.title"),
+      subtitle: t("exp.1.subtitle"),
+      company: t("exp.1.company"),
+      period: t("exp.1.period"),
+      points: [t("exp.1.p0"), t("exp.1.p1"), t("exp.1.p2")],
+    },
+    {
+      title: t("exp.2.title"),
+      subtitle: t("exp.2.subtitle"),
+      company: t("exp.2.company"),
+      period: t("exp.2.period"),
+      points: [t("exp.2.p0"), t("exp.2.p1"), t("exp.2.p2"), t("exp.2.p3")],
+    },
+  ];
+
   return (
     <section id="experience" className="py-20 px-6">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 flex items-center gap-3">
           <Briefcase className="w-8 h-8 text-accent" />
-          Experience
+          {t("exp.title")}
         </h2>
 
         <div className="relative">
