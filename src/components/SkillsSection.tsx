@@ -13,7 +13,7 @@ const skillCategories = [
   {
     title: "GIS & Spatial Analysis",
     skills: [
-      { name: "ArcGIS", level: "Good" },
+      { name: "ArcGIS", level: "Intermediate" },
       { name: "QGIS", level: "Basic" },
       { name: "Spatial Analysis", level: "Applied" },
     ],
